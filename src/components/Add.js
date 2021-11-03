@@ -41,7 +41,7 @@ class Add extends React.Component {
                         <button 
                             className="btn btn-primary"
                             onClick={() => this.props.addItem}>
-                            Add
+                            add
                         </button>
                     </div>
                     <div>
