@@ -1,6 +1,9 @@
 import React from 'react'
 
 import Button from './components/Button'
+import Add from './components/Add'
+import List from './components/List'
+import Pay from './components/Pay'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 class App extends React.Component {
@@ -10,8 +13,8 @@ class App extends React.Component {
     this.state = {
       activeTab: "add",
       items: [],
-      isSelected: true
     }
+    
 
     this.handleButtonClick = this.handleButtonClick.bind(this)
 
@@ -20,15 +23,29 @@ class App extends React.Component {
   handleButtonClick(str) {
     console.log("handleButtonClick:", str)
     this.setState({activeTab: str})
+  }
 
+  addItem(name, price) {
+    this.setState({items: [...this.state.items]})
   }
 
   render() {
-    console.log("activeTab:",this.state.activeTab)
+    console.log(this.state.items)
     return (
       <div>
         <Button
-        handleClick={this.handleButtonClick}
+          handleClick={this.handleButtonClick}
+        />
+        <div>
+          {this.props.isSelected === "add" && <h1>Add</h1>}
+          {this.props.isSelected === "list" && <h1>List</h1>}
+          {this.props.isSelected === "pay" && <h1>Pay</h1>}
+        </div>
+        <Add
+          addItem={this.addItem.value}
+        />
+        <List
+          items
         />
       </div>
     );
