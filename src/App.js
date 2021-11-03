@@ -9,16 +9,17 @@ class App extends React.Component {
     
     this.state = {
       activeTab: "add",
-      items: []
+      items: [],
+      isSelected: true
     }
 
     this.handleButtonClick = this.handleButtonClick.bind(this)
 
   }
 
-  handleButtonClick(str, index) {
-    // console.log("handleButtonClick:", str)
-    this.setState({activeTab: str, index})
+  handleButtonClick(str) {
+    console.log("handleButtonClick:", str)
+    this.setState({activeTab: str})
 
   }
 
@@ -28,7 +29,6 @@ class App extends React.Component {
       <div>
         <Button
         handleClick={this.handleButtonClick}
-        isSelected={this.props.activeTab === "str"}
         />
       </div>
     );
