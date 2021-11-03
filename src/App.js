@@ -33,6 +33,9 @@ class App extends React.Component {
     console.log(this.state.items)
     return (
       <div>
+        <div className="d-flex justify-content-center">
+          <h1>Bakery</h1>
+        </div>
         <Button
           handleClick={this.handleButtonClick}
         />

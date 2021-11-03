@@ -8,28 +8,30 @@ class Button extends React.Component {
         console.log("isSelected:", isSelected)
     
         return (
-            <div className="row">
-                <div className="col mx-3 my-5 d-flex justify-content-center">
-                    <button 
-                        type="button" 
-                        className={`me-3 btn btn-outline-primary ${isSelected === "add" && 'bg-primary text-white'}`}
-                        onClick={() => handleClick("add")}
-                        value="add"
-                        >add
-                    </button>
-                    <button 
-                        type="button" 
-                        className={`me-3 btn btn-outline-primary ${isSelected === "list" && 'bg-primary text-white'}`}
-                        onClick={() => handleClick("list")}
-                        >list
-                    </button>
-                    <button 
-                        type="button" 
-                        className={`me-3 btn btn-outline-primary ${isSelected === "pay" && 'bg-primary text-white'}`}
-                        onClick={() => handleClick("pay")}
-                        >pay
-                    </button>                      
-            </div>
+            <div className="container">
+                <div className="row">
+                    <div className="col my-5 d-flex justify-content-start">
+                        <button 
+                            type="button" 
+                            className={`me-2 btn btn-outline-primary ${isSelected === "add" && 'bg-primary text-white'}`}
+                            onClick={() => handleClick("add")}
+                            value="add"
+                            >add
+                        </button>
+                        <button 
+                            type="button" 
+                            className={`me-2 btn btn-outline-primary ${isSelected === "list" && 'bg-primary text-white'}`}
+                            onClick={() => handleClick("list")}
+                            >list
+                        </button>
+                        <button 
+                            type="button" 
+                            className={`me-2 btn btn-outline-primary ${isSelected === "pay" && 'bg-primary text-white'}`}
+                            onClick={() => handleClick("pay")}
+                            >pay
+                        </button>                      
+                    </div>
+                </div>
             </div>
         );
     }
